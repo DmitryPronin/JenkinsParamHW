@@ -13,8 +13,8 @@ public class JenkinsParamTest extends BaseTest{
     void openTransportPageTest(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        open("/kazan/transport?cd=1");
+        open();
 
-        $("h1").shouldHave(text("Транспорт и запчасти"));
+        $("h1").shouldHave(text("Работа найдется для каждого"));
     }
 }

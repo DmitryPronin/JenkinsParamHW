@@ -6,7 +6,7 @@ public class BaseTest {
 
     @BeforeAll
     static void setUp(){
-        Configuration.baseUrl= "https://avito.ru";
+        Configuration.baseUrl= "https://hh.ru";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "92");
         Configuration.browserSize = System.getProperty("browserSize", "600x600");
