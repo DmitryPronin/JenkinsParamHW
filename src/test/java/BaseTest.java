@@ -1,4 +1,6 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -10,6 +12,8 @@ public class BaseTest {
 
     @BeforeAll
     static void setUp(){
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
         Configuration.baseUrl= "https://kazved.ru/";
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;

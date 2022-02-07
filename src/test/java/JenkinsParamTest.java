@@ -12,11 +12,23 @@ public class JenkinsParamTest extends BaseTest{
 
     @Test
     void openTransportPageTest(){
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
 
         open("");
 
         $(byText("Спецпроекты")).click();
         $(".panel-group__title").shouldHave(text("Новости по рубрике - Спецпроекты"));
     }
+
+    @Test
+    void openUrlFromParam(){
+        String login = System.getProperty("login");
+        String password = System.getProperty("password");
+        String url = System.getProperty("url");
+
+        open(url);
+        $("#text").setValue(login + password);
+    }
+
+
 }
