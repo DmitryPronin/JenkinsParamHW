@@ -13,7 +13,7 @@ public class JenkinsParamTest extends BaseTest{
     void openTransportPageTest(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        open("/ru");
+        open("ru");
 
         $("q").setValue(browser + " " + browserVersion).pressEnter();
         $("h3").shouldHave(text(browser + " " + browserVersion));
