@@ -10,7 +10,7 @@ public class BaseTest {
 
     @BeforeAll
     static void setUp(){
-        Configuration.baseUrl= "https://www.google.com/";
+        Configuration.baseUrl= "https://kazved.ru/";
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
         Configuration.browserSize = browserSize;

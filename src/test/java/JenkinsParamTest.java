@@ -4,6 +4,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -15,7 +16,7 @@ public class JenkinsParamTest extends BaseTest{
 
         open("");
 
-        $("q").setValue(browser + " " + browserVersion + " " + browserSize).pressEnter();
-        $("h3").shouldHave(text(browser + " " + browserVersion));
+        $(byText("Спецпроекты")).click();
+        $("#panel-group__title").shouldHave(text("Новости по рубрике - Спецпроекты"));
     }
 }
