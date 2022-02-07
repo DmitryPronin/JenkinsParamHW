@@ -15,6 +15,7 @@ public class JenkinsParamTest extends BaseTest{
 
         open();
 
-        $("h1").shouldHave(text("Работа найдется для каждого"));
+        $("q").setValue(browser + " " + browserVersion).pressEnter();
+        $("h3").shouldHave(text(browser + " " + browserVersion));
     }
 }
