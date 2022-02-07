@@ -27,7 +27,8 @@ public class JenkinsParamTest extends BaseTest{
         String url = System.getProperty("url");
 
         open(url);
-        $("#text").setValue(login + password);
+        $("#text").setValue(login + password).pressEnter();
+        $(".serp-adv__found").shouldHave(text("Нашлось"));
     }
 
 
