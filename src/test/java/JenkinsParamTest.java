@@ -15,7 +15,7 @@ public class JenkinsParamTest extends BaseTest{
 
         open("");
 
-        $("q").setValue(browser + " " + browserVersion).pressEnter();
+        $("q").setValue(browser + " " + browserVersion + " " + browserSize).pressEnter();
         $("h3").shouldHave(text(browser + " " + browserVersion));
     }
 }
