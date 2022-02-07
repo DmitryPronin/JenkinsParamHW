@@ -17,6 +17,6 @@ public class JenkinsParamTest extends BaseTest{
         open("");
 
         $(byText("Спецпроекты")).click();
-        $("#panel-group__title").shouldHave(text("Новости по рубрике - Спецпроекты"));
+        $(".panel-group__title").shouldHave(text("Новости по рубрике - Спецпроекты"));
     }
 }
