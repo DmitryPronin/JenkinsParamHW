@@ -8,6 +8,8 @@ public class BaseTest {
     static String browser = System.getProperty("browser", "chrome");
     static String browserVersion = System.getProperty("browserVersion", "92");
     static String browserSize = System.getProperty("browserSize", "600x600");
+    static String loginPass = System.getProperty("passLoginRemoteURL");
+    static String remoteURL = System.getProperty("remoteURL");
 
 
     @BeforeAll
@@ -19,7 +21,7 @@ public class BaseTest {
         Configuration.browserVersion = browserVersion;
         Configuration.browserSize = browserSize;
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://" + loginPass +"@" + remoteURL;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
