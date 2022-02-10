@@ -8,8 +8,10 @@ public class BaseTest {
     static String browser = System.getProperty("browser", "chrome");
     static String browserVersion = System.getProperty("browserVersion", "92");
     static String browserSize = System.getProperty("browserSize", "600x600");
-    static String loginPass = System.getProperty("passLoginRemoteURL");
+    static String loginRemote = System.getProperty("loginRemoteURL");
+    static String passRemote = System.getProperty("passRemoteURL");
     static String remoteURL = System.getProperty("remoteURL");
+
 
 
     @BeforeAll
@@ -21,7 +23,7 @@ public class BaseTest {
         Configuration.browserVersion = browserVersion;
         Configuration.browserSize = browserSize;
 
-        Configuration.remote = "https://" + loginPass +"@" + remoteURL;
+        Configuration.remote = "https://" + loginRemote + ":" + passRemote +"@" + remoteURL;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
